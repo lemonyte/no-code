@@ -20,7 +20,7 @@ jobs:
         run: uv build --sdist
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: sdist
           path: ./dist/*.tar.gz
