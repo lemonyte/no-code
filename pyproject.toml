@@ -36,6 +36,7 @@ dev = [
 ]
 
 [tool.setuptools]
+package-dir = { "" = "src" }
 package-data = { no_code = ["py.typed"] }
 
 [tool.setuptools.dynamic]
