@@ -13,7 +13,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     name: Create release
     runs-on: ubuntu-latest
-    environment: Release
+    environment: release
     permissions:
       contents: write
     steps:
@@ -32,7 +32,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     name: Publish package to PyPI
     runs-on: ubuntu-latest
-    environment: Release
+    environment: release
     permissions:
       id-token: write
     steps:
