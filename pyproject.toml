@@ -40,8 +40,8 @@ dev = [
 package-dir = { "" = "src" }
 package-data = { no_code = ["py.typed"] }
 
-[tool.setuptools.dynamic]
-version = { attr = "no_code.__version__" }
+# [tool.setuptools.dynamic]
+# version = { attr = "no_code.__version__" }
 
 [tool.ruff]
 src = ["src"]
