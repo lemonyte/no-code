@@ -24,10 +24,9 @@ def nothing(data: str, /) -> str: ...
 def nothing(data: "ReadableBuffer", /, *, errors: str = "strict") -> bytes: ...
 def nothing(data: "str | ReadableBuffer", /, *, errors: str = "strict") -> str | bytes:
     """Transform a string or bytes-like object into nothing."""
-    as_string = isinstance(data, str)
-    data_bytes = data.encode("utf-8", errors) if as_string else bytes(data)
+    data_bytes = data.encode("utf-8", errors) if isinstance(data, str) else bytes(data)
     transformed = "".join(format(byte, "08b") for byte in data_bytes).translate({48: 0x200B, 49: 0x200C})
-    return transformed if as_string else transformed.encode("utf-8", errors)
+    return transformed if isinstance(data, str) else transformed.encode("utf-8", errors)
 
 
 @overload
@@ -36,8 +35,7 @@ def something(data: str, /) -> str: ...
 def something(data: "ReadableBuffer", /, *, errors: str = "strict") -> bytes: ...
 def something(data: "str | ReadableBuffer", /, *, errors: str = "strict") -> str | bytes:
     """Transform nothing into a string or bytes-like object."""
-    as_string = isinstance(data, str)
-    data_str = data if as_string else bytes(data).decode("utf-8", errors)
+    data_str = data if isinstance(data, str) else bytes(data).decode("utf-8", errors)
     chars = bytearray()
     bits = []
     for char in data_str:
@@ -50,7 +48,7 @@ def something(data: "str | ReadableBuffer", /, *, errors: str = "strict") -> str
         if len(bits) == BYTE_SIZE:
             chars.append(int("".join(bits), base=2))
             bits.clear()
-    return chars.decode("utf-8", errors) if as_string else bytes(chars)
+    return chars.decode("utf-8", errors) if isinstance(data, str) else bytes(chars)
 
 
 def encode(input: str, errors: str | None = None, /) -> tuple[bytes, int]:

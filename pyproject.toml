@@ -33,6 +33,7 @@ dev = [
     "pytest-cov~=7.0.0",
     "pytest~=8.4.2",
     "setuptools>=61",
+    "ty>=0.0.2",
 ]
 
 [tool.setuptools]
@@ -55,7 +56,5 @@ ignore = ["A", "D", "T"]
 [tool.ruff.lint.per-file-ignores]
 "**/tests/*" = ["S101", "S603"]
 
-[tool.pyright]
-venvPath = "."
-venv = ".venv"
+[tool.ty.src]
 exclude = ["tests/code/**"]
