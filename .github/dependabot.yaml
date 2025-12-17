@@ -1,11 +1,9 @@
 version: 2
 updates:
-  - package-ecosystem: "uv"
+  - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "monthly"
-    # for testing
-    target-branch: dependabot-uv
 
   - package-ecosystem: "github-actions"
     directory: "/"
