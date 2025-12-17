@@ -29,7 +29,7 @@ yes_code = "no_code.__main__:yes_code_cmd"
 
 [dependency-groups]
 dev = [
-    "pre-commit~=4.3.0",
+    "prek~=0.2.22",
     "pytest-cov~=7.0.0",
     "pytest~=8.4.2",
     "setuptools>=61",
