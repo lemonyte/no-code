@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    # for testing
+    target-branch: dependabot-uv
 
   - package-ecosystem: "github-actions"
     directory: "/"
