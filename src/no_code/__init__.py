@@ -20,8 +20,9 @@ $ yes_code no_code.py > some_code.py
 See the [README](https://github.com/lemonyte/no-code) for more information.
 """
 
+from importlib.metadata import version
+
 from no_code.no import no_code, nothing, something
 
-__name__ = "no_code"
-__version__ = "0.0.1"
+__version__ = version("no-code")
 __all__ = ("no_code", "nothing", "something")
