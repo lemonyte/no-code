@@ -1,10 +1,6 @@
-[build-system]
-requires = ["setuptools>=61"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "no-code"
-dynamic = ["version"]
+version = "0.0.2"
 description = "The best way to write code is to write no code at all."
 readme = "README.md"
 license = "MIT"
@@ -32,16 +28,15 @@ dev = [
     "prek>=0.2.22",
     "pytest-cov~=7.0.0",
     "pytest~=9.0.2",
-    "setuptools>=61",
     "ty>=0.0.2",
 ]
 
-[tool.setuptools]
-package-dir = { "" = "src" }
-package-data = { no_code = ["py.typed"] }
+[build-system]
+requires = ["uv_build>=0.9.22,<0.10.0"]
+build-backend = "uv_build"
 
-[tool.setuptools.dynamic]
-version = { attr = "no_code.__version__" }
+[tool.uv.build-backend]
+data = { purelib = "purelib" }
 
 [tool.ruff]
 src = ["src"]
