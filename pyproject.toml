@@ -25,7 +25,7 @@ yes_code = "no_code.__main__:yes_code_cmd"
 
 [dependency-groups]
 dev = [
-    "prek>=0.2.22",
+    "prek>=0.2.27",
     "pytest-cov~=7.0.0",
     "pytest~=9.0.2",
     "ty>=0.0.2",
