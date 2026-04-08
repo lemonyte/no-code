@@ -11,10 +11,10 @@ This package allows you to write nothing, and still have your code do something.
 > It is highly recommended to use a virtual environment for proper installation of the `no.pth` file.
 
 ```shell
-python -m pip install git+https://github.com/lemonyte/no-code
+python -m pip install no-code
 ```
 
-[Python 3.10](https://www.python.org/downloads/) or a newer version is required.
+Python 3.10 or a newer version is required.
 
 ## Usage
 
