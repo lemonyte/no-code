@@ -32,7 +32,7 @@ dev = [
 ]
 
 [build-system]
-requires = ["uv_build>=0.9.22,<0.10.0"]
+requires = ["uv_build>=0.11.5,<0.12"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
@@ -41,8 +41,7 @@ data = { purelib = "purelib" }
 [tool.ruff]
 src = ["src"]
 exclude = ["tests/code/**"]
-line-length = 119
-target-version = "py310"
+line-length = 120
 
 [tool.ruff.lint]
 select = ["ALL"]
